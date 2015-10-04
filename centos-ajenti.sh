@@ -265,7 +265,8 @@ rm /tmp/pass.tmp
 echo "[OK]   Done"
 echo "------------------------------------------------------"
 # tambah size
-sed -i 's/post_max_size = 8M/post_max_size = 35M/g' etc/php.ini
-sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' etc/php.ini
+sed -i 's/max_execution_time = 30/max_execution_time = 600/g' /etc/php.ini
+sed -i 's/post_max_size = 8M/post_max_size = 35M/g' /etc/php.ini
+sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php.ini
 cat ~/setup_info.txt
 
