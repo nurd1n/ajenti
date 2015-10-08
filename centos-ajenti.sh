@@ -268,5 +268,7 @@ echo "------------------------------------------------------"
 sed -i 's/max_execution_time = 30/max_execution_time = 600/g' /etc/php.ini
 sed -i 's/post_max_size = 8M/post_max_size = 35M/g' /etc/php.ini
 sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 20M/g' /etc/php.ini
+# reboot, restart nginx , restart php-fpm tiap 24 jam
+echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot && echo "1 0 * * * root /etc/init.d/nginx restart && /etc/init.d/php-fpm restart" > /etc/cron.d/nginxfpm
 cat ~/setup_info.txt
 
